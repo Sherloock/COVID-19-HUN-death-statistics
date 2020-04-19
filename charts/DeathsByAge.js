@@ -8,6 +8,7 @@ class DeathsByAge {
     const data = this.getData(tick);
     const labels = this.getLabels(data, tick);
     console.log({ data: data, labels: labels });
+    const totalDeathCount = deaths.length;
 
     var ctx = document.getElementById(this.id).getContext('2d');
     var myChdeathsByAgeChartart = new Chart(ctx, {
@@ -19,7 +20,7 @@ class DeathsByAge {
         datasets: [
           {
             data: data,
-            // backgroundColor: colors.standalone,
+            label: 'Elhalálozások száma (fő)',
             backgroundColor: colorTransition(
               getColors().age.young.getIntegerRGB(),
               getColors().age.old.getIntegerRGB(),
@@ -28,6 +29,33 @@ class DeathsByAge {
             borderWidth: 1,
           },
         ],
+      },
+      options: {
+        tooltips: {
+          mode: 'label',
+          callbacks: {
+            // label: function (tooltipItem, data) {
+            //   var corporation = data.datasets[tooltipItem.datasetIndex].label;
+            //   var valor =
+            //     data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+            //   window.total += valor;
+            //   return (
+            //     corporation +
+            //     ': ' +
+            //     valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+            //   );
+            // },
+            footer: function (tooltipItem, data) {
+              return (
+                (
+                  (data.datasets[0].data[tooltipItem[0].index] /
+                    totalDeathCount) *
+                  100
+                ).toFixed(2) + '%'
+              );
+            },
+          },
+        },
       },
     });
   }

@@ -27,10 +27,10 @@ function colorTransition(cA, cB, count) {
   for (let i = 0; i < count; i++) {
     result.push(
       new RGBColour(
-        cA.r - (diff.r / count) * i,
-        cA.g - (diff.g / count) * i,
-        cA.b - (diff.b / count) * i,
-        cA.a - (diff.a / count) * i
+        cA.r - (diff.r / (count - 1)) * i,
+        cA.g - (diff.g / (count - 1)) * i,
+        cA.b - (diff.b / (count - 1)) * i,
+        cA.a - (diff.a / (count - 1)) * i
       )
     );
   }
