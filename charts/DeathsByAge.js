@@ -7,34 +7,27 @@ class DeathsByAge {
   getChart(tick) {
     const data = this.getData(tick);
     const labels = this.getLabels(data, tick);
-    // console.log({ data: data, labels: labels });
+    console.log({ data: data, labels: labels });
 
     var ctx = document.getElementById(this.id).getContext('2d');
     var myChdeathsByAgeChartart = new Chart(ctx, {
-      type: 'bar',
+      type: 'pie',
       reponsive: true,
       aspectRatio: 2,
       data: {
         labels: labels,
         datasets: [
           {
-            label: 'Elhalálozások száma (fő)',
             data: data,
-            backgroundColor: colors.standalone,
+            // backgroundColor: colors.standalone,
+            backgroundColor: colorTransition(
+              getColors().age.young.getIntegerRGB(),
+              getColors().age.old.getIntegerRGB(),
+              data.length
+            ).map((color) => color.getCSSIntegerRGBA()),
             borderWidth: 1,
           },
         ],
-      },
-      options: {
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-              },
-            },
-          ],
-        },
       },
     });
   }

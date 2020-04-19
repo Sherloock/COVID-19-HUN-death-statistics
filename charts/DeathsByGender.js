@@ -23,7 +23,10 @@ class DeathsByGender {
           {
             label: 'Elhalálozások száma (fő)',
             data: data,
-            backgroundColor: [colors.gender.women, colors.gender.men],
+            backgroundColor: [
+              getColors().gender.women.getCSSIntegerRGBA(),
+              getColors().gender.men.getCSSIntegerRGBA(),
+            ],
             borderWidth: 1,
           },
         ],

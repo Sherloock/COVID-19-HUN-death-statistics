@@ -7,7 +7,7 @@ class DeathsByGenderAndAge {
   getChart(tick) {
     const data = this.getData(tick);
     const labels = this.getLabels(data['Férfi'], tick);
-    console.log({ data: data, labels: labels });
+    // console.log({ data: data, labels: labels });
 
     var ctx = document.getElementById(this.id).getContext('2d');
     var myChart = new Chart(ctx, {
@@ -19,12 +19,12 @@ class DeathsByGenderAndAge {
         datasets: [
           {
             label: 'Nő',
-            backgroundColor: getColors().gender.women.getCSSIntegerRGBA(),
+            backgroundColor: colors.gender.women,
             data: data['Nő'],
           },
           {
             label: 'Férfi',
-            backgroundColor: getColors().gender.men.getCSSIntegerRGBA(),
+            backgroundColor: colors.gender.men,
             data: data['Férfi'],
           },
         ],
