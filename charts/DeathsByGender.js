@@ -5,13 +5,12 @@ class DeathsByGender {
   }
 
   getChart() {
-    console.log(populationpyramid);
     const stuff = this.getData();
     // const labels = deathsByGenderLabels(data, tick);
-    console.log({ stuff: stuff });
+    // console.log({ stuff: stuff });
     const data = Object.values(stuff);
     const labels = Object.keys(stuff);
-    console.log({ data: data, labels: labels });
+    // console.log({ data: data, labels: labels });
 
     var ctx = document.getElementById(this.id).getContext('2d');
     var myChdeathsByAgeChartart = new Chart(ctx, {
@@ -24,7 +23,7 @@ class DeathsByGender {
           {
             label: 'Deaths by Gender',
             data: data,
-            backgroundColor: 'rgba(255, 99, 132, 0.6)',
+            backgroundColor: [colors.gender.women, colors.gender.men],
             borderWidth: 1,
           },
         ],

@@ -7,7 +7,7 @@ class DeathsByAge {
   getChart(tick) {
     const data = this.getData(tick);
     const labels = this.getLabels(data, tick);
-    console.log({ data: data, labels: labels });
+    // console.log({ data: data, labels: labels });
 
     var ctx = document.getElementById(this.id).getContext('2d');
     var myChdeathsByAgeChartart = new Chart(ctx, {
@@ -20,7 +20,7 @@ class DeathsByAge {
           {
             label: 'Deaths by Age',
             data: data,
-            backgroundColor: 'rgba(255, 99, 132, 0.6)',
+            backgroundColor: colors.standalone,
             borderWidth: 1,
           },
         ],
@@ -62,7 +62,3 @@ class DeathsByAge {
     return result;
   }
 }
-
-//deathsByAge
-
-// DATASET

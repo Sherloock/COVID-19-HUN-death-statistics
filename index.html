@@ -10,10 +10,12 @@
     <!-- sources -->
     <script src="sources/deaths.js"></script>
     <script src="sources/populationpyramid.js"></script>
+    <script src="sources/colors.js"></script>
 
     <!-- charts -->
     <script src="charts/DeathsByAge.js"></script>
     <script src="charts/DeathsByGender.js"></script>
+    <script src="charts/DeathsByGenderAndAge.js"></script>
 
     <!-- other -->
     <script src="tab.js"></script>
@@ -39,6 +41,7 @@
     />
   </head>
   <body>
+    <!-- TABS -->
     <div class="tab">
       <button class="tablinks" onclick="openTab(event, 'deathsByAge')">
         Deaths by Age
@@ -46,8 +49,12 @@
       <button class="tablinks" onclick="openTab(event, 'deathsByGender')">
         Deaths by Gender
       </button>
-      <button class="tablinks" onclick="openTab(event, 'Tokyo')">Tokyo</button>
+      <button class="tablinks" onclick="openTab(event, 'deathsByGenderAndAge')">
+        DBB
+      </button>
     </div>
+
+    <!-- TABCONTENT -->
 
     <!-- DEATHS BY AGE -->
     <div id="deathsByAge" class="tabcontent">
@@ -65,9 +72,12 @@
       </script>
     </div>
 
-    <div id="Tokyo" class="tabcontent">
-      <h3>Tokyo</h3>
-      <p>Tokyo is the capital of Japan.</p>
+    <!-- DEATHS BY GENDER AND AGE-->
+    <div id="deathsByGenderAndAge" class="tabcontent">
+      <canvas id="deathsByGenderAndAgeChart" width="400" height="150"></canvas>
+      <script>
+        new DeathsByGenderAndAge('deathsByGenderAndAgeChart').getChart(6);
+      </script>
     </div>
 
     <script>

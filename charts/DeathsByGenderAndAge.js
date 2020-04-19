@@ -4,13 +4,9 @@ class DeathsByGenderAndAge {
     this.id = id;
   }
 
-  getChart() {
-    console.log(populationpyramid);
-    const stuff = this.getData();
-    // const labels = deathsByGenderLabels(data, tick);
-    console.log({ stuff: stuff });
-    const data = Object.values(stuff);
-    const labels = Object.keys(stuff);
+  getChart(tick) {
+    const data = this.getData(tick);
+    const labels = this.getLabels(data['Férfi'], tick);
     console.log({ data: data, labels: labels });
 
     var ctx = document.getElementById(this.id).getContext('2d');
@@ -22,10 +18,14 @@ class DeathsByGenderAndAge {
         labels: labels,
         datasets: [
           {
-            label: 'Deaths by Gender',
-            data: data,
-            backgroundColor: 'rgba(255, 99, 132, 0.6)',
-            borderWidth: 1,
+            label: 'Nő',
+            backgroundColor: colors.gender.women,
+            data: data['Nő'],
+          },
+          {
+            label: 'Férfi',
+            backgroundColor: colors.gender.men,
+            data: data['Férfi'],
           },
         ],
       },
@@ -43,16 +43,33 @@ class DeathsByGenderAndAge {
     });
   }
 
-  getData() {
+  getLabels(data, tick) {
+    let result = [];
+    for (let i = 0; i < data.length; i++) {
+      result.push(tick * i + ' - ' + (tick * i + tick - 1));
+    }
+
+    return result;
+  }
+
+  getData(tick = 1) {
+    // const ages = data.map(row => row.Kor);
     let result = [];
     deaths.forEach((row) => {
-      const agegroup = row.Nem;
-      if (result[agegroup] == undefined) {
-        result[agegroup] = 1;
+      const agegroup = Math.floor(row.Kor / tick);
+      if (result[row.Nem] == undefined) {
+        result[row.Nem] = [];
+      }
+      if (result[row.Nem][agegroup] == undefined) {
+        result[row.Nem][agegroup] = 1;
       } else {
-        result[agegroup]++;
+        result[row.Nem][agegroup]++;
       }
     });
     return result;
   }
 }
+
+//deathsByAge
+
+// DATASET
