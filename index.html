@@ -6,9 +6,17 @@
     <title>COVID-19</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
-    <script src="deaths.js"></script>
+
+    <!-- sources -->
+    <script src="sources/deaths.js"></script>
+    <script src="sources/populationpyramid.js"></script>
+
+    <!-- charts -->
+    <script src="charts/DeathsByAge.js"></script>
+    <script src="charts/DeathsByGender.js"></script>
+
+    <!-- other -->
     <script src="tab.js"></script>
-    <script src="populationpyramid.js"></script>
 
     <!-- jquerry -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -45,7 +53,7 @@
     <div id="deathsByAge" class="tabcontent">
       <canvas id="deathsByAgeChart" width="400" height="150"></canvas>
       <script>
-        deathsByAgeChart(5);
+        new DeathsByAge('deathsByAgeChart').getChart(5);
       </script>
     </div>
 
@@ -53,7 +61,7 @@
     <div id="deathsByGender" class="tabcontent">
       <canvas id="deathsByGenderChart" width="400" height="150"></canvas>
       <script>
-        deathsByGenderChart();
+        new DeathsByGender('deathsByGenderChart').getChart();
       </script>
     </div>
 
@@ -61,5 +69,9 @@
       <h3>Tokyo</h3>
       <p>Tokyo is the capital of Japan.</p>
     </div>
+
+    <script>
+      openTab(undefined, 'deathsByAge');
+    </script>
   </body>
 </html>
