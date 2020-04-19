@@ -13,7 +13,7 @@ class DeathsByGender {
     // console.log({ data: data, labels: labels });
 
     var ctx = document.getElementById(this.id).getContext('2d');
-    var myChdeathsByAgeChartart = new Chart(ctx, {
+    var myChart = new Chart(ctx, {
       type: 'bar',
       reponsive: true,
       aspectRatio: 2,
@@ -21,7 +21,7 @@ class DeathsByGender {
         labels: labels,
         datasets: [
           {
-            label: 'Deaths by Gender',
+            label: 'Elhalálozások száma (fő)',
             data: data,
             backgroundColor: [colors.gender.women, colors.gender.men],
             borderWidth: 1,

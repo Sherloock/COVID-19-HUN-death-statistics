@@ -18,7 +18,7 @@ class DeathsByAge {
         labels: labels,
         datasets: [
           {
-            label: 'Deaths by Age',
+            label: 'Elhalálozások száma (fő)',
             data: data,
             backgroundColor: colors.standalone,
             borderWidth: 1,
@@ -42,7 +42,7 @@ class DeathsByAge {
   getLabels(data, tick) {
     let result = [];
     for (let i = 0; i < data.length; i++) {
-      result.push(tick * i + ' - ' + (tick * i + tick - 1));
+      result.push(tick * i + '-' + (tick * i + tick - 1));
     }
 
     return result;

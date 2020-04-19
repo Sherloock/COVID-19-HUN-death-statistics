@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>COVID-19</title>
+    <title>COVID-19-HUN elhalálozások</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
 
@@ -11,6 +11,7 @@
     <script src="sources/deaths.js"></script>
     <script src="sources/populationpyramid.js"></script>
     <script src="sources/colors.js"></script>
+    <script src="sources/style.js"></script>
 
     <!-- charts -->
     <script src="charts/DeathsByAge.js"></script>
@@ -44,13 +45,13 @@
     <!-- TABS -->
     <div class="tab">
       <button class="tablinks" onclick="openTab(event, 'deathsByAge')">
-        Deaths by Age
+        Életkor
       </button>
       <button class="tablinks" onclick="openTab(event, 'deathsByGender')">
-        Deaths by Gender
+        Nem
       </button>
       <button class="tablinks" onclick="openTab(event, 'deathsByGenderAndAge')">
-        DBB
+        Életkor és nem
       </button>
     </div>
 
@@ -60,7 +61,7 @@
     <div id="deathsByAge" class="tabcontent">
       <canvas id="deathsByAgeChart" width="400" height="150"></canvas>
       <script>
-        new DeathsByAge('deathsByAgeChart').getChart(5);
+        new DeathsByAge('deathsByAgeChart').getChart(6);
       </script>
     </div>
 
@@ -81,7 +82,7 @@
     </div>
 
     <script>
-      openTab(undefined, 'deathsByAge');
+      openTab(undefined, 'deathsByGenderAndAge');
     </script>
   </body>
 </html>

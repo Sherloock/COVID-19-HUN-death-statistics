@@ -10,7 +10,7 @@ class DeathsByGenderAndAge {
     console.log({ data: data, labels: labels });
 
     var ctx = document.getElementById(this.id).getContext('2d');
-    var myChdeathsByAgeChartart = new Chart(ctx, {
+    var myChart = new Chart(ctx, {
       type: 'bar',
       reponsive: true,
       aspectRatio: 2,
@@ -33,11 +33,55 @@ class DeathsByGenderAndAge {
         scales: {
           yAxes: [
             {
+              stacked: true,
               ticks: {
                 beginAtZero: true,
               },
+              scaleLabel: {
+                display: true,
+                labelString: 'fő',
+                fontFamily: style.font.axis,
+                fontSize: style.fontsize.axis,
+              },
             },
           ],
+          xAxes: [
+            {
+              stacked: true,
+
+              scaleLabel: {
+                display: true,
+                labelString: 'életkor',
+                fontFamily: style.font.axis,
+                fontSize: style.fontsize.axis,
+              },
+            },
+          ],
+        },
+        tooltips: {
+          mode: 'label',
+          callbacks: {
+            afterTitle: function () {
+              window.total = 0;
+            },
+            label: function (tooltipItem, data) {
+              var corporation = data.datasets[tooltipItem.datasetIndex].label;
+              var valor =
+                data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+              window.total += valor;
+              return (
+                corporation +
+                ': ' +
+                valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+              );
+            },
+            footer: function () {
+              return (
+                'Összesen: ' +
+                window.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+              );
+            },
+          },
         },
       },
     });
@@ -46,30 +90,32 @@ class DeathsByGenderAndAge {
   getLabels(data, tick) {
     let result = [];
     for (let i = 0; i < data.length; i++) {
-      result.push(tick * i + ' - ' + (tick * i + tick - 1));
+      result.push(tick * i + '-' + (tick * i + tick - 1));
     }
 
     return result;
   }
 
   getData(tick = 1) {
-    // const ages = data.map(row => row.Kor);
     let result = [];
+
     deaths.forEach((row) => {
       const agegroup = Math.floor(row.Kor / tick);
+
       if (result[row.Nem] == undefined) {
         result[row.Nem] = [];
       }
+      // if(result['SUM'] == undefined){
+
+      // }
+
       if (result[row.Nem][agegroup] == undefined) {
         result[row.Nem][agegroup] = 1;
       } else {
         result[row.Nem][agegroup]++;
+        // result['SUM'][agegroup]++;
       }
     });
     return result;
   }
 }
-
-//deathsByAge
-
-// DATASET
