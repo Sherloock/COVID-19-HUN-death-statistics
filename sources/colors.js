@@ -13,7 +13,7 @@ function getColors() {
 }
 
 function colorTransition(cA, cB, count) {
-  console.log({ cA: cA, cB: cB, count: count });
+  // console.log({ cA: cA, cB: cB, count: count });
 
   let diff = {
     r: cA.r - cB.r,
@@ -21,7 +21,7 @@ function colorTransition(cA, cB, count) {
     b: cA.b - cB.b,
     a: cA.a - cB.a,
   };
-  console.log({ diff: diff });
+  // console.log({ diff: diff });
 
   let result = [];
   for (let i = 0; i < count; i++) {
@@ -34,8 +34,8 @@ function colorTransition(cA, cB, count) {
       )
     );
   }
-  console.log({
-    colorTransitionRes: result.map((a) => a.getCSSIntegerRGBA()),
-  });
+  // console.log({
+  //   colorTransitionRes: result.map((a) => a.getCSSIntegerRGBA()),
+  // });
   return result;
 }

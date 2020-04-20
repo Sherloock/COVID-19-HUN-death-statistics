@@ -69,6 +69,10 @@ class DeathsByGenderAndAge {
               var valor =
                 data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
               window.total += valor;
+              if (valor == undefined) {
+                return '';
+              }
+
               return (
                 corporation +
                 ': ' +

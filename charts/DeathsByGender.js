@@ -11,10 +11,11 @@ class DeathsByGender {
     const data = Object.values(stuff);
     const labels = Object.keys(stuff);
     // console.log({ data: data, labels: labels });
+    const totalDeathCount = deaths.length;
 
     var ctx = document.getElementById(this.id).getContext('2d');
     var myChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'pie',
       reponsive: true,
       aspectRatio: 2,
       data: {
@@ -24,25 +25,36 @@ class DeathsByGender {
             label: 'Elhalálozások száma (fő)',
             data: data,
             backgroundColor: [
-              getColors().gender.women.getCSSIntegerRGBA(),
-              getColors().gender.men.getCSSIntegerRGBA(),
+              this.getColor(labels[0]),
+              this.getColor(labels[1]),
             ],
             borderWidth: 1,
           },
         ],
       },
       options: {
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-              },
+        tooltips: {
+          mode: 'label',
+          callbacks: {
+            footer: function (tooltipItem, data) {
+              return (
+                (
+                  (data.datasets[0].data[tooltipItem[0].index] /
+                    totalDeathCount) *
+                  100
+                ).toFixed(2) + '%'
+              );
             },
-          ],
+          },
         },
       },
     });
+  }
+
+  getColor(gender) {
+    return gender === 'Nő'
+      ? getColors().gender.women.getCSSIntegerRGBA()
+      : getColors().gender.men.getCSSIntegerRGBA();
   }
 
   getData() {
