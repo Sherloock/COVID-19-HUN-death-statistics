@@ -1,5 +1,67 @@
 const deaths = [
   {
+    Sorszám: 199,
+    Nem: 'Férfi',
+    Kor: 75,
+    Alapbetegségek:
+      'többszörös ideggyulladás, kitágult szívizomgyulladás, pitvarfribliláció, agyhártya daganat, többszörös érfalsérülés',
+  },
+  {
+    Sorszám: 198,
+    Nem: 'Nő',
+    Kor: 84,
+    Alapbetegségek:
+      'HT - autoimmun betegség, rheumatoid arthritis, veseelégtelenség',
+  },
+  {
+    Sorszám: 197,
+    Nem: 'Férfi',
+    Kor: 87,
+    Alapbetegségek: 'általános  érelmeszesedés',
+  },
+  {
+    Sorszám: 196,
+    Nem: 'Férfi',
+    Kor: 85,
+    Alapbetegségek: 'magas vérnyomás, cukorbeteg, agyi keringési zavar',
+  },
+  {
+    Sorszám: 195,
+    Nem: 'Nő',
+    Kor: 81,
+    Alapbetegségek: 'asztma, stroke, magas vérnyomás, cukorbetegség',
+  },
+  {
+    Sorszám: 194,
+    Nem: 'Nő',
+    Kor: 70,
+    Alapbetegségek: 'magas vérnyomás',
+  },
+  {
+    Sorszám: 193,
+    Nem: 'Nő',
+    Kor: 94,
+    Alapbetegségek: 'magas vérnyomás, agyi keringési zavar',
+  },
+  {
+    Sorszám: 192,
+    Nem: 'Férfi',
+    Kor: 71,
+    Alapbetegségek: 'cukorbetegség, daganat, szívelégtelenség',
+  },
+  {
+    Sorszám: 191,
+    Nem: 'Nő',
+    Kor: 87,
+    Alapbetegségek: 'magas vérnyomás, demencia',
+  },
+  {
+    Sorszám: 190,
+    Nem: 'Nő',
+    Kor: 92,
+    Alapbetegségek: 'magas vérnyomás, stroke',
+  },
+  {
     Sorszám: 189,
     Nem: 'Nő',
     Kor: 81,
