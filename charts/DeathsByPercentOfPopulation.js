@@ -1,10 +1,11 @@
-class DeathsByGenderAndAge {
+class DeathsByPercentOfPopulation {
   id;
   constructor(id) {
     this.id = id;
   }
 
-  getChart(tick) {
+  getChart() {
+    const tick = 5;
     const data = this.getData(tick);
     const labels = this.getLabels(data['Férfi'], tick);
     // console.log({ data: data, labels: labels });
@@ -19,12 +20,12 @@ class DeathsByGenderAndAge {
         datasets: [
           {
             label: 'Nő',
-            backgroundColor: colors.gender.women,
+            backgroundColor: getColors().gender.women.getCSSIntegerRGBA(),
             data: data['Nő'],
           },
           {
             label: 'Férfi',
-            backgroundColor: colors.gender.men,
+            backgroundColor: getColors().gender.men.getCSSIntegerRGBA(),
             data: data['Férfi'],
           },
         ],

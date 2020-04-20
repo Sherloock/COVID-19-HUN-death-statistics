@@ -18,6 +18,7 @@
     <script src="charts/DeathsByAge.js"></script>
     <script src="charts/DeathsByGender.js"></script>
     <script src="charts/DeathsByGenderAndAge.js"></script>
+    <script src="charts/DeathsByPercentOfPopulation.js"></script>
 
     <!-- other -->
     <script src="tab.js"></script>
@@ -58,6 +59,12 @@
       <button class="tablinks" onclick="openTab(event, 'deathsByGenderAndAge')">
         Életkor és nem
       </button>
+      <button
+        class="tablinks"
+        onclick="openTab(event, 'deathsByPercentOfPopulation')"
+      >
+        népességre jutó
+      </button>
     </div>
 
     <!-- TABCONTENT -->
@@ -86,8 +93,22 @@
       </script>
     </div>
 
+    <!-- DEATHS BY GENDER AND AGE-->
+    <div id="deathsByPercentOfPopulation" class="tabcontent">
+      <canvas
+        id="deathsByPercentOfPopulationChart"
+        width="400"
+        height="150"
+      ></canvas>
+      <script>
+        new DeathsByPercentOfPopulation(
+          'deathsByPercentOfPopulationChart'
+        ).getChart(6);
+      </script>
+    </div>
+
     <script>
-      openTab(undefined, 'deathsByGender');
+      openTab(undefined, 'deathsByPercentOfPopulation');
     </script>
   </body>
 </html>

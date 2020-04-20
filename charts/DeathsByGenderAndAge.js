@@ -61,28 +61,38 @@ class DeathsByGenderAndAge {
         tooltips: {
           mode: 'label',
           callbacks: {
+            title: function (tooltipItem) {
+              // console.log(tooltipItem);
+              return tooltipItem[0].label + ' éves';
+            },
+
             afterTitle: function () {
               window.total = 0;
+              // return ' fő';
             },
+
             label: function (tooltipItem, data) {
-              var corporation = data.datasets[tooltipItem.datasetIndex].label;
+              var gender = data.datasets[tooltipItem.datasetIndex].label;
               var valor =
                 data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
               window.total += valor;
+
               if (valor == undefined) {
                 return '';
               }
 
               return (
-                corporation +
+                gender +
                 ': ' +
-                valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+                valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') +
+                ' fő'
               );
             },
             footer: function () {
               return (
                 'Összesen: ' +
-                window.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+                window.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') +
+                ' fő'
               );
             },
           },
