@@ -1,4 +1,4 @@
-const populationpyramid = [
+const population = [
   {
     Age: '0-4',
     M: 234915,

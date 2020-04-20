@@ -7,8 +7,9 @@ class DeathsByPercentOfPopulation {
   getChart() {
     const tick = 5;
     const data = this.getData(tick);
+
     const labels = this.getLabels(data['Férfi'], tick);
-    // console.log({ data: data, labels: labels });
+    console.log({ data: data, labels: labels });
 
     var ctx = document.getElementById(this.id).getContext('2d');
     var myChart = new Chart(ctx, {
@@ -40,7 +41,7 @@ class DeathsByPercentOfPopulation {
               },
               scaleLabel: {
                 display: true,
-                labelString: 'Elhalálozások száma (fő)',
+                labelString: 'Egymillió főre jutó elhalálozások száma (fő)',
                 fontFamily: style.font.axis,
                 fontSize: style.fontsize.axis,
               },
@@ -62,24 +63,43 @@ class DeathsByPercentOfPopulation {
         tooltips: {
           mode: 'label',
           callbacks: {
+            title: function (tooltipItem) {
+              // console.log(tooltipItem);
+              return tooltipItem[0].label + ' éves';
+            },
+
             afterTitle: function () {
               window.total = 0;
+              // return ' fő';
             },
+
             label: function (tooltipItem, data) {
-              var corporation = data.datasets[tooltipItem.datasetIndex].label;
+              var gender = data.datasets[tooltipItem.datasetIndex].label;
               var valor =
                 data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
               window.total += valor;
+
+              if (valor == undefined) {
+                return '';
+              }
+
               return (
-                corporation +
+                gender +
                 ': ' +
-                valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+                valor
+                  // .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') +
+                  .toFixed(2) +
+                ' fő'
               );
             },
             footer: function () {
               return (
                 'Összesen: ' +
-                window.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+                window.total
+                  // .toString()
+                  // .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+                  .toFixed(2) +
+                ' fő'
               );
             },
           },
@@ -113,6 +133,18 @@ class DeathsByPercentOfPopulation {
         result[row.Nem][agegroup]++;
       }
     });
+    result['Férfi'] = this.perCapita(result['Férfi'], 'M');
+    result['Nő'] = this.perCapita(result['Nő'], 'F');
     return result;
+  }
+
+  perCapita(data, gender) {
+    for (let i = 0; i < data.length; i++) {
+      if (data[i] == undefined) {
+        data[i] = 0;
+      }
+      data[i] /= population[i][gender] / 1000000;
+    }
+    return data;
   }
 }
