@@ -75,11 +75,11 @@ class DeathsByGenderAndAge {
               var gender = data.datasets[tooltipItem.datasetIndex].label;
               var valor =
                 data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-              window.total += valor;
 
               if (valor == undefined) {
                 return '';
               }
+              window.total += valor;
 
               return (
                 gender +
@@ -89,6 +89,8 @@ class DeathsByGenderAndAge {
               );
             },
             footer: function () {
+              console.log(window);
+
               return (
                 'Összesen: ' +
                 window.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') +
