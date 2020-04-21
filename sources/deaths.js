@@ -1,5 +1,94 @@
 const deaths = [
   {
+    Sorszám: 213,
+    Nem: 'Nő',
+    Kor: 73,
+    Alapbetegségek: 'krónikus obstruktív tüdőbetegség',
+  },
+  {
+    Sorszám: 212,
+    Nem: 'Férfi',
+    Kor: 66,
+    Alapbetegségek: 'daganatos betegség, anyagcsere betegség',
+  },
+  {
+    Sorszám: 211,
+    Nem: 'Nő',
+    Kor: 63,
+    Alapbetegségek:
+      'magas vérnyomás, krónikus veseelégtelenség, krónikus obstruktív tüdőgyulladás, mellhártyagyulladás',
+  },
+  {
+    Sorszám: 210,
+    Nem: 'Férfi',
+    Kor: 79,
+    Alapbetegségek: 'pitvarfibrilláció, szívelégtelenség',
+  },
+  {
+    Sorszám: 209,
+    Nem: 'Férfi',
+    Kor: 81,
+    Alapbetegségek:
+      'magas vérnyomás, szívelégtelenség, demencia, Parkinson-kór,',
+  },
+  {
+    Sorszám: 208,
+    Nem: 'Nő',
+    Kor: 60,
+    Alapbetegségek: 'az adat feltölés alatt',
+  },
+  {
+    Sorszám: 207,
+    Nem: 'Nő',
+    Kor: 74,
+    Alapbetegségek: '2-es típusú cukorbetegség, magas vérnyomás,reflux',
+  },
+  {
+    Sorszám: 206,
+    Nem: 'Nő',
+    Kor: 87,
+    Alapbetegségek: 'érelmeszesedés, magas vérnyomás',
+  },
+  {
+    Sorszám: 205,
+    Nem: 'Nő',
+    Kor: 66,
+    Alapbetegségek: 'stroke, epekő, magas vérnyomás,reflux,',
+  },
+  {
+    Sorszám: 204,
+    Nem: 'Nő',
+    Kor: 83,
+    Alapbetegségek: 'idült nyirokkeringési zavar, magas vérnyomás',
+  },
+  {
+    Sorszám: 203,
+    Nem: 'Nő',
+    Kor: 83,
+    Alapbetegségek:
+      'pitvarfibrilláció, cukorbetegség, magas vérnyomás, szívbetegség, demencia, epilepsia',
+  },
+  {
+    Sorszám: 202,
+    Nem: 'Férfi',
+    Kor: 75,
+    Alapbetegségek: 'cukorbetegség',
+  },
+  {
+    Sorszám: 201,
+    Nem: 'Nő',
+    Kor: 81,
+    Alapbetegségek:
+      'általános érelmeszesedés, magas vérnyomás, iremiás szívbetegség, veseelégtelenség, dementia',
+  },
+  {
+    Sorszám: 200,
+    Nem: 'Nő',
+    Kor: 78,
+    Alapbetegségek:
+      'krónikus obstruktív tüdőbetegség, pitvari fibrilláció, pangásos szívelégtelenség, inzulinfüggő cukorbetegség, magas vérnyomás',
+  },
+  {
     Sorszám: 199,
     Nem: 'Férfi',
     Kor: 75,
