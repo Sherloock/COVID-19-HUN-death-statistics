@@ -1,5 +1,81 @@
 const deaths = [
   {
+    Sorszám: 225,
+    Nem: 'Férfi',
+    Kor: 73,
+    Alapbetegségek: 'dementia, anémia',
+  },
+  {
+    Sorszám: 224,
+    Nem: 'Férfi',
+    Kor: 87,
+    Alapbetegségek:
+      'magas vérnyomás, dilatativ cardiomyopathia, iszkémiás szívbetegség, pitvarfibrillatio',
+  },
+  {
+    Sorszám: 223,
+    Nem: 'Férfi',
+    Kor: 68,
+    Alapbetegségek:
+      'Hepato-splenomegalia (máj-lépbetegség), CLL, ascites, lympadenomegalia',
+  },
+  {
+    Sorszám: 222,
+    Nem: 'Nő',
+    Kor: 86,
+    Alapbetegségek: 'vascularis dementia',
+  },
+  {
+    Sorszám: 221,
+    Nem: 'Férfi',
+    Kor: 89,
+    Alapbetegségek:
+      '2-es típusú cukorbetegség, veseelégtelenség, koszorúér betegség',
+  },
+  {
+    Sorszám: 220,
+    Nem: 'Nő',
+    Kor: 87,
+    Alapbetegségek: 'érelmeszesedés, magas vérnyomás',
+  },
+  {
+    Sorszám: 219,
+    Nem: 'Férfi',
+    Kor: 68,
+    Alapbetegségek: 'magas vérnyomás, köszvény',
+  },
+  {
+    Sorszám: 218,
+    Nem: 'Nő',
+    Kor: 96,
+    Alapbetegségek: 'magas vérnyomás',
+  },
+  {
+    Sorszám: 217,
+    Nem: 'Nő',
+    Kor: 79,
+    Alapbetegségek: 'cukorbetegség, magas vérnyomás, hepatitis',
+  },
+  {
+    Sorszám: 216,
+    Nem: 'Férfi',
+    Kor: 93,
+    Alapbetegségek: 'demencia, Anderson-Tawil szindróma',
+  },
+  {
+    Sorszám: 215,
+    Nem: 'Nő',
+    Kor: 70,
+    Alapbetegségek: 'asztma, krónikus obstruktív tüdőbetegség',
+  },
+  {
+    Sorszám: 214,
+    Nem: 'Nő',
+    Kor: 89,
+    Alapbetegségek:
+      'szívritmuszavar, szívizom elégtelenség, magas vérnyomás, cukorbetegség',
+  },
+  {
     Sorszám: 213,
     Nem: 'Nő',
     Kor: 73,

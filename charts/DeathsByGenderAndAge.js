@@ -89,8 +89,6 @@ class DeathsByGenderAndAge {
               );
             },
             footer: function () {
-              console.log(window);
-
               return (
                 'Összesen: ' +
                 window.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') +
