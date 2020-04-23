@@ -8,7 +8,7 @@ class DeathsByAge {
     const data = this.getData(tick);
     const labels = this.getLabels(data, tick);
     // console.log({ data: data, labels: labels });
-    const totalDeathCount = deaths.length;
+    const totalDeathCount = Deaths.getCount();
 
     var ctx = document.getElementById(this.id).getContext('2d');
     var myChdeathsByAgeChartart = new Chart(ctx, {
@@ -72,7 +72,7 @@ class DeathsByAge {
   getData(tick = 1) {
     // const ages = data.map(row => row.Kor);
     let result = [];
-    deaths.forEach((row) => {
+    Deaths.getData().forEach((row) => {
       const agegroup = Math.floor(row.Kor / tick);
       if (result[agegroup] == undefined) {
         result[agegroup] = 1;

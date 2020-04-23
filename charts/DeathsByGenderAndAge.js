@@ -113,7 +113,7 @@ class DeathsByGenderAndAge {
   getData(tick = 1) {
     let result = [];
 
-    deaths.forEach((row) => {
+    Deaths.getData().forEach((row) => {
       const agegroup = Math.floor(row.Kor / tick);
 
       if (result[row.Nem] == undefined) {

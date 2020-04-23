@@ -11,7 +11,7 @@ class DeathsByGender {
     const data = Object.values(stuff);
     const labels = Object.keys(stuff);
     // console.log({ data: data, labels: labels });
-    const totalDeathCount = deaths.length;
+    const totalDeathCount = Deaths.getCount();
 
     var ctx = document.getElementById(this.id).getContext('2d');
     var myChart = new Chart(ctx, {
@@ -59,7 +59,7 @@ class DeathsByGender {
 
   getData() {
     let result = [];
-    deaths.forEach((row) => {
+    Deaths.getData().forEach((row) => {
       const agegroup = row.Nem;
       if (result[agegroup] == undefined) {
         result[agegroup] = 1;

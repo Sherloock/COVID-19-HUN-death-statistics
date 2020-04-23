@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
 
     <!-- sources -->
-    <script src="sources/deaths.js"></script>
+    <script src="sources/Deaths.js"></script>
     <script src="sources/population.js"></script>
     <script src="sources/colors.js"></script>
     <script src="sources/Colour.js"></script>
@@ -72,25 +72,16 @@
     <!-- DEATHS BY AGE -->
     <div id="deathsByAge" class="tabcontent">
       <canvas id="deathsByAgeChart" width="400" height="150"></canvas>
-      <script>
-        new DeathsByAge('deathsByAgeChart').getChart(5);
-      </script>
     </div>
 
     <!-- DEATHS BY GENDER -->
     <div id="deathsByGender" class="tabcontent">
       <canvas id="deathsByGenderChart" width="400" height="150"></canvas>
-      <script>
-        new DeathsByGender('deathsByGenderChart').getChart();
-      </script>
     </div>
 
     <!-- DEATHS BY GENDER AND AGE-->
     <div id="deathsByGenderAndAge" class="tabcontent">
       <canvas id="deathsByGenderAndAgeChart" width="400" height="150"></canvas>
-      <script>
-        new DeathsByGenderAndAge('deathsByGenderAndAgeChart').getChart(5);
-      </script>
     </div>
 
     <!-- DEATHS BY POPULATION-->
@@ -100,14 +91,16 @@
         width="400"
         height="150"
       ></canvas>
-      <script>
-        new DeathsByPercentOfPopulation(
-          'deathsByPercentOfPopulationChart'
-        ).getChart();
-      </script>
     </div>
 
     <script>
+      Deaths.dataCheck();
+      new DeathsByAge('deathsByAgeChart').getChart(61);
+      new DeathsByGender('deathsByGenderChart').getChart();
+      new DeathsByGenderAndAge('deathsByGenderAndAgeChart').getChart(10);
+      new DeathsByPercentOfPopulation(
+        'deathsByPercentOfPopulationChart'
+      ).getChart();
       openTab(undefined, 'deathsByGenderAndAge');
     </script>
   </body>
