@@ -9,7 +9,7 @@ class PopulationChart {
     const data = this.getData(tick);
 
     const labels = Population.data.map((row) => row.Age).reverse();
-    console.log({ data: data, labels: labels });
+    // console.log({ data: data, labels: labels });
 
     var ctx = document.getElementById(this.id).getContext('2d');
     var myChart = new Chart(ctx, {
@@ -54,12 +54,12 @@ class PopulationChart {
               ticks: {
                 callback: function (value, index, values) {
                   // console.log({ value: value, index: index, values: values });
-                  return Math.abs(value);
+                  return Math.abs(value) / 1000;
                 },
               },
               scaleLabel: {
                 display: true,
-                labelString: 'fő',
+                labelString: 'ezer fő',
                 fontFamily: style.font.axis,
                 fontSize: style.fontsize.axis,
               },
@@ -80,6 +80,8 @@ class PopulationChart {
             },
 
             label: function (tooltipItem, data) {
+              // console.log({ tooltipItem: tooltipItem, data: data });
+
               var gender = data.datasets[tooltipItem.datasetIndex].label;
               var valor =
                 data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
@@ -87,24 +89,35 @@ class PopulationChart {
               if (valor == undefined) {
                 return '';
               }
+
               valor = Math.abs(valor);
+
+              window[gender] = valor;
               window.total += valor;
+
               return (
                 gender +
                 ': ' +
                 valor
-                  // .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') +
-                  .toFixed(2) +
+
+                  .toFixed(0)
+                  // .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ' ') +
                 ' fő'
               );
             },
             footer: function () {
               return (
+                'Férfiak aránya: ' +
+                // window['Férfi'] / window['Nő'] +
+                ((window['Férfi'] / window.total) * 100).toFixed(2) +
+                '%' +
+                '\n' +
                 'Összesen: ' +
                 window.total
                   // .toString()
-                  // .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
-                  .toFixed(2) +
+                  .toFixed(0)
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ' ') +
                 ' fő'
               );
             },
@@ -114,15 +127,15 @@ class PopulationChart {
     });
   }
 
-  getData(tick = 1) {
+  getData() {
     let result = [];
     result['Férfi'] = [];
     result['Nő'] = [];
     Population.data.forEach((row) => {
       // result['Férfi'].push(-row.M);
       // result['Nő'].push(row.F);
-      result['Férfi'].splice(0, 0, -row.M);
-      result['Nő'].splice(0, 0, row.F);
+      result['Férfi'].splice(0, 0, row.M);
+      result['Nő'].splice(0, 0, -row.F);
     });
     return result;
   }
