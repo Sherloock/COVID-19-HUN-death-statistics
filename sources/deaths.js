@@ -34,6 +34,75 @@ class Deaths {
   static getData() {
     return [
       {
+        Sorszám: 250,
+        Nem: 'Nő',
+        Kor: 91,
+        Alapbetegségek:
+          'magas vérnyomás, általános érelmeszesedés, szívelégtelenség',
+      },
+      {
+        Sorszám: 249,
+        Nem: 'Nő',
+        Kor: 76,
+        Alapbetegségek:
+          'emlőtumor, petefészek tumor, magas vérnyomás, cukorbetegség',
+      },
+      {
+        Sorszám: 248,
+        Nem: 'Nő',
+        Kor: 74,
+        Alapbetegségek:
+          'tüdő tumor, pajzsmirigy-alulműködés, autoimmun betegség',
+      },
+      {
+        Sorszám: 247,
+        Nem: 'Férfi',
+        Kor: 85,
+        Alapbetegségek: 'magas vérnyomás, érrendszeri megbetegedés',
+      },
+      {
+        Sorszám: 246,
+        Nem: 'Nő',
+        Kor: 88,
+        Alapbetegségek: 'magas vérnyomás, demencia',
+      },
+      {
+        Sorszám: 245,
+        Nem: 'Nő',
+        Kor: 91,
+        Alapbetegségek: 'magas vérnyomás, szívbetegség, szívaneurizma',
+      },
+      {
+        Sorszám: 244,
+        Nem: 'Nő',
+        Kor: 95,
+        Alapbetegségek: 'magas vérnyomás, koleszterin, bőrdaganat',
+      },
+      {
+        Sorszám: 243,
+        Nem: 'Férfi',
+        Kor: 61,
+        Alapbetegségek: 'májtályog',
+      },
+      {
+        Sorszám: 242,
+        Nem: 'Férfi',
+        Kor: 86,
+        Alapbetegségek: 'magas vérnyomás, szívritmuszavar, béltumor, tüdőáttét',
+      },
+      {
+        Sorszám: 241,
+        Nem: 'Férfi',
+        Kor: 60,
+        Alapbetegségek: 'veseelégtelenség, embólia, trombozis, vesegyulladás',
+      },
+      {
+        Sorszám: 240,
+        Nem: 'Nő',
+        Kor: 89,
+        Alapbetegségek: 'szívbetegség, magas vérnyomás, cukorbetegség',
+      },
+      {
         Sorszám: 239,
         Nem: 'Férfi',
         Kor: 87,

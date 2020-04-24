@@ -13,6 +13,7 @@
     <script src="sources/colors.js"></script>
     <script src="sources/Colour.js"></script>
     <script src="sources/style.js"></script>
+    <script src="sources/APIs.js"></script>
 
     <!-- charts -->
     <script src="charts/DeathsByAge.js"></script>
@@ -94,10 +95,12 @@
     </div>
 
     <script>
+      new APIs().get();
+
       Deaths.dataCheck();
-      new DeathsByAge('deathsByAgeChart').getChart(61);
+      new DeathsByAge('deathsByAgeChart').getChart(20);
       new DeathsByGender('deathsByGenderChart').getChart();
-      new DeathsByGenderAndAge('deathsByGenderAndAgeChart').getChart(10);
+      new DeathsByGenderAndAge('deathsByGenderAndAgeChart').getChart(7);
       new DeathsByPercentOfPopulation(
         'deathsByPercentOfPopulationChart'
       ).getChart();
