@@ -1,17 +1,19 @@
-class DeathsByGenderAndAge {
+class PopulationChart {
   id;
   constructor(id) {
     this.id = id;
   }
 
-  getChart(tick) {
+  getChart() {
+    const tick = 5;
     const data = this.getData(tick);
+
     const labels = this.getLabels(data['Férfi'], tick);
-    // console.log({ data: data, labels: labels });
+    console.log({ data: data, labels: labels });
 
     var ctx = document.getElementById(this.id).getContext('2d');
     var myChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'horizontalBar',
       reponsive: true,
       aspectRatio: 2,
       data: {
@@ -39,7 +41,7 @@ class DeathsByGenderAndAge {
               },
               scaleLabel: {
                 display: true,
-                labelString: 'Elhalálozások száma (fő)',
+                labelString: 'Egymillió főre jutó elhalálozások száma (fő)',
                 fontFamily: style.font.axis,
                 fontSize: style.fontsize.axis,
               },
@@ -75,23 +77,28 @@ class DeathsByGenderAndAge {
               var gender = data.datasets[tooltipItem.datasetIndex].label;
               var valor =
                 data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+              window.total += valor;
 
               if (valor == undefined) {
                 return '';
               }
-              window.total += valor;
 
               return (
                 gender +
                 ': ' +
-                valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') +
+                valor
+                  // .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') +
+                  .toFixed(2) +
                 ' fő'
               );
             },
             footer: function () {
               return (
                 'Összesen: ' +
-                window.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') +
+                window.total
+                  // .toString()
+                  // .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+                  .toFixed(2) +
                 ' fő'
               );
             },
@@ -126,6 +133,18 @@ class DeathsByGenderAndAge {
         result[row.Nem][agegroup]++;
       }
     });
+    result['Férfi'] = this.perCapita(result['Férfi'], 'M');
+    result['Nő'] = this.perCapita(result['Nő'], 'F');
     return result;
+  }
+
+  perCapita(data, gender) {
+    for (let i = 0; i < data.length; i++) {
+      if (data[i] == undefined) {
+        data[i] = 0;
+      }
+      data[i] /= Population.data[i][gender] / 1000000;
+    }
+    return data;
   }
 }

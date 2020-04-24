@@ -72,7 +72,7 @@ class DeathsByAge {
   getData(tick = 1) {
     // const ages = data.map(row => row.Kor);
     let result = [];
-    Deaths.getData().forEach((row) => {
+    Deaths.data.forEach((row) => {
       const agegroup = Math.floor(row.Kor / tick);
       if (result[agegroup] == undefined) {
         result[agegroup] = 1;

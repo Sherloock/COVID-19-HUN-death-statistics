@@ -120,7 +120,7 @@ class DeathsByPercentOfPopulation {
   getData(tick = 1) {
     let result = [];
 
-    Deaths.getData().forEach((row) => {
+    Deaths.data.forEach((row) => {
       const agegroup = Math.floor(row.Kor / tick);
 
       if (result[row.Nem] == undefined) {
@@ -143,7 +143,7 @@ class DeathsByPercentOfPopulation {
       if (data[i] == undefined) {
         data[i] = 0;
       }
-      data[i] /= population[i][gender] / 1000000;
+      data[i] /= Population.data[i][gender] / 1000000;
     }
     return data;
   }

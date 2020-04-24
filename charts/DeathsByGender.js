@@ -59,7 +59,7 @@ class DeathsByGender {
 
   getData() {
     let result = [];
-    Deaths.getData().forEach((row) => {
+    Deaths.data.forEach((row) => {
       const agegroup = row.Nem;
       if (result[agegroup] == undefined) {
         result[agegroup] = 1;

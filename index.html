@@ -9,7 +9,7 @@
 
     <!-- sources -->
     <script src="sources/Deaths.js"></script>
-    <script src="sources/population.js"></script>
+    <script src="sources/Population.js"></script>
     <script src="sources/colors.js"></script>
     <script src="sources/Colour.js"></script>
     <script src="sources/style.js"></script>
@@ -19,6 +19,7 @@
     <script src="charts/DeathsByAge.js"></script>
     <script src="charts/DeathsByGender.js"></script>
     <script src="charts/DeathsByGenderAndAge.js"></script>
+    <script src="charts/PopulationChart.js"></script>
     <script src="charts/DeathsByPercentOfPopulation.js"></script>
 
     <!-- other -->
@@ -60,6 +61,9 @@
       <button class="tablinks" onclick="openTab(event, 'deathsByGenderAndAge')">
         Életkor és nem
       </button>
+      <button class="tablinks" onclick="openTab(event, 'population')">
+        Népesség
+      </button>
       <button
         class="tablinks"
         onclick="openTab(event, 'deathsByPercentOfPopulation')"
@@ -85,6 +89,11 @@
       <canvas id="deathsByGenderAndAgeChart" width="400" height="150"></canvas>
     </div>
 
+    <!-- POPULATION-->
+    <div id="population" class="tabcontent">
+      <canvas id="populationChart" width="400" height="150"></canvas>
+    </div>
+
     <!-- DEATHS BY POPULATION-->
     <div id="deathsByPercentOfPopulation" class="tabcontent">
       <canvas
@@ -95,16 +104,19 @@
     </div>
 
     <script>
-      new APIs().get();
+      // new APIs().get();
 
       Deaths.dataCheck();
       new DeathsByAge('deathsByAgeChart').getChart(20);
       new DeathsByGender('deathsByGenderChart').getChart();
       new DeathsByGenderAndAge('deathsByGenderAndAgeChart').getChart(7);
+      new PopulationChart('populationChart').getChart();
       new DeathsByPercentOfPopulation(
         'deathsByPercentOfPopulationChart'
       ).getChart();
-      openTab(undefined, 'deathsByGenderAndAge');
+
+      // first
+      openTab(undefined, 'population');
     </script>
   </body>
 </html>
