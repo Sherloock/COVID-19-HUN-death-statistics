@@ -9,7 +9,7 @@ class DeathsByPercentOfPopulation {
     const data = this.getData(tick);
 
     const labels = this.getLabels(data['Férfi'], tick);
-    // console.log({ data: data, labels: labels });
+    console.log({ data: data, labels: labels });
 
     var ctx = document.getElementById(this.id).getContext('2d');
     var myChart = new Chart(ctx, {

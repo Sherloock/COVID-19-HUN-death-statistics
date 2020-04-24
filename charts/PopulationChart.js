@@ -8,7 +8,7 @@ class PopulationChart {
     const tick = 5;
     const data = this.getData(tick);
 
-    const labels = this.getLabels(data['Férfi'], tick);
+    const labels = Population.data.map((row) => row.Age).reverse();
     console.log({ data: data, labels: labels });
 
     var ctx = document.getElementById(this.id).getContext('2d');
@@ -37,11 +37,12 @@ class PopulationChart {
             {
               stacked: true,
               ticks: {
-                beginAtZero: true,
+                beginAtZero: false,
               },
               scaleLabel: {
                 display: true,
-                labelString: 'Egymillió főre jutó elhalálozások száma (fő)',
+
+                labelString: 'életkor',
                 fontFamily: style.font.axis,
                 fontSize: style.fontsize.axis,
               },
@@ -50,10 +51,15 @@ class PopulationChart {
           xAxes: [
             {
               stacked: true,
-
+              ticks: {
+                callback: function (value, index, values) {
+                  // console.log({ value: value, index: index, values: values });
+                  return Math.abs(value);
+                },
+              },
               scaleLabel: {
                 display: true,
-                labelString: 'életkor',
+                labelString: 'fő',
                 fontFamily: style.font.axis,
                 fontSize: style.fontsize.axis,
               },
@@ -77,12 +83,12 @@ class PopulationChart {
               var gender = data.datasets[tooltipItem.datasetIndex].label;
               var valor =
                 data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-              window.total += valor;
 
               if (valor == undefined) {
                 return '';
               }
-
+              valor = Math.abs(valor);
+              window.total += valor;
               return (
                 gender +
                 ': ' +
@@ -108,43 +114,16 @@ class PopulationChart {
     });
   }
 
-  getLabels(data, tick) {
-    let result = [];
-    for (let i = 0; i < data.length; i++) {
-      result.push(tick * i + '-' + (tick * i + tick - 1));
-    }
-
-    return result;
-  }
-
   getData(tick = 1) {
     let result = [];
-
-    Deaths.data.forEach((row) => {
-      const agegroup = Math.floor(row.Kor / tick);
-
-      if (result[row.Nem] == undefined) {
-        result[row.Nem] = [];
-      }
-
-      if (result[row.Nem][agegroup] == undefined) {
-        result[row.Nem][agegroup] = 1;
-      } else {
-        result[row.Nem][agegroup]++;
-      }
+    result['Férfi'] = [];
+    result['Nő'] = [];
+    Population.data.forEach((row) => {
+      // result['Férfi'].push(-row.M);
+      // result['Nő'].push(row.F);
+      result['Férfi'].splice(0, 0, -row.M);
+      result['Nő'].splice(0, 0, row.F);
     });
-    result['Férfi'] = this.perCapita(result['Férfi'], 'M');
-    result['Nő'] = this.perCapita(result['Nő'], 'F');
     return result;
-  }
-
-  perCapita(data, gender) {
-    for (let i = 0; i < data.length; i++) {
-      if (data[i] == undefined) {
-        data[i] = 0;
-      }
-      data[i] /= Population.data[i][gender] / 1000000;
-    }
-    return data;
   }
 }
