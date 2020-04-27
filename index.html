@@ -14,6 +14,7 @@
     <script src="sources/Colour.js"></script>
     <script src="sources/style.js"></script>
     <script src="sources/APIs.js"></script>
+    <script src="sources/File.js"></script>
 
     <!-- charts -->
     <script src="charts/DeathsByAge.js"></script>
@@ -104,7 +105,13 @@
     </div>
 
     <script>
-      // new APIs().get();
+      stuff();
+
+      async function stuff() {
+        var result = await new APIs().get('2020-04-10');
+        console.log(result);
+        File.saveTextAsFile(JSON.stringify(result));
+      }
 
       Deaths.dataCheck();
       new DeathsByAge('deathsByAgeChart').getChart(60);
