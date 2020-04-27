@@ -107,16 +107,16 @@
       // new APIs().get();
 
       Deaths.dataCheck();
-      new DeathsByAge('deathsByAgeChart').getChart(65);
+      new DeathsByAge('deathsByAgeChart').getChart(60);
       new DeathsByGender('deathsByGenderChart').getChart();
-      new DeathsByGenderAndAge('deathsByGenderAndAgeChart').getChart(5);
+      new DeathsByGenderAndAge('deathsByGenderAndAgeChart').getChart(10);
       new PopulationChart('populationChart').getChart();
       new DeathsByPercentOfPopulation(
         'deathsByPercentOfPopulationChart'
       ).getChart();
 
       // first
-      openTab(undefined, 'population');
+      openTab(undefined, 'deathsByGenderAndAge');
     </script>
   </body>
 </html>

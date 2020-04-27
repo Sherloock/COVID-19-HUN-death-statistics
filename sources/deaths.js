@@ -33,6 +33,196 @@ class Deaths {
 
   static data = [
     {
+      Sorszám: 280,
+      Nem: 'Férfi',
+      Kor: 79,
+      Alapbetegségek: 'krónikus obstruktív tüdőbetegség, Parkinson-kór, stroke',
+    },
+    {
+      Sorszám: 279,
+      Nem: 'Nő',
+      Kor: 86,
+      Alapbetegségek: 'keringési elégtelenség, pangásos szívelégtelenség',
+    },
+    {
+      Sorszám: 278,
+      Nem: 'Férfi',
+      Kor: 86,
+      Alapbetegségek:
+        'magas vérnyomás, érelmeszesedés, agylágyulás, tüdőgyulladás',
+    },
+    {
+      Sorszám: 277,
+      Nem: 'Férfi',
+      Kor: 66,
+      Alapbetegségek: 'daganatos megbetegedés',
+    },
+    {
+      Sorszám: 276,
+      Nem: 'Nő',
+      Kor: 63,
+      Alapbetegségek:
+        'agyvérzés, vírusos tüdőgyulladás, cukorbetegség, féloldali bénulás, stroke',
+    },
+    {
+      Sorszám: 275,
+      Nem: 'Férfi',
+      Kor: 86,
+      Alapbetegségek: 'dementia, paranoiditás',
+    },
+    {
+      Sorszám: 274,
+      Nem: 'Férfi',
+      Kor: 80,
+      Alapbetegségek:
+        'gyengeség, rossz általános állapot, nyelési nehézség, krónikus alkoholizmus',
+    },
+    {
+      Sorszám: 273,
+      Nem: 'Nő',
+      Kor: 81,
+      Alapbetegségek:
+        'magas vérnyomás, krónikus obstruktív tüdőbetegség, pitvarfibrilláció, reflux',
+    },
+    {
+      Sorszám: 272,
+      Nem: 'Férfi',
+      Kor: 82,
+      Alapbetegségek: 'vérszegénység',
+    },
+    {
+      Sorszám: 271,
+      Nem: 'Nő',
+      Kor: 37,
+      Alapbetegségek: 'extrém elhízás',
+    },
+    {
+      Sorszám: 270,
+      Nem: 'Férfi',
+      Kor: 87,
+      Alapbetegségek: 'magas vérnyomás, hólyagtumor, szívizomelhalás',
+    },
+    {
+      Sorszám: 269,
+      Nem: 'Nő',
+      Kor: 86,
+      Alapbetegségek:
+        'szívbetegség, autoimmun betegség, kettes típusú cukorbetegség, pszichiátriai kezelés',
+    },
+    {
+      Sorszám: 268,
+      Nem: 'Férfi',
+      Kor: 58,
+      Alapbetegségek:
+        'iszkémiás szívbetegség, szívelégtelenség, krónikus veseelégtelenség',
+    },
+    {
+      Sorszám: 267,
+      Nem: 'Nő',
+      Kor: 76,
+      Alapbetegségek: 'iszkémiás szívbetegség, pitvarfibrilláció',
+    },
+    {
+      Sorszám: 266,
+      Nem: 'Férfi',
+      Kor: 84,
+      Alapbetegségek: 'magas vérnyomás',
+    },
+    {
+      Sorszám: 265,
+      Nem: 'Nő',
+      Kor: 85,
+      Alapbetegségek:
+        'magas vérnyomás, pajzsmirigy betegség, iszkémiás szívbetegség, reflux',
+    },
+    {
+      Sorszám: 264,
+      Nem: 'Férfi',
+      Kor: 85,
+      Alapbetegségek: 'cukorbetegség, szívizombántalom',
+    },
+    {
+      Sorszám: 263,
+      Nem: 'Férfi',
+      Kor: 71,
+      Alapbetegségek: 'tüdőrák, cukorbetegség, veseelégtelenség',
+    },
+    {
+      Sorszám: 262,
+      Nem: 'Nő',
+      Kor: 79,
+      Alapbetegségek: 'magas vérnyomás, szívbetegség',
+    },
+    {
+      Sorszám: 261,
+      Nem: 'Férfi',
+      Kor: 71,
+      Alapbetegségek:
+        'magas vérnyomás, ízületi gyulladás, pajzsmirigy alulműködés',
+    },
+    {
+      Sorszám: 260,
+      Nem: 'Nő',
+      Kor: 83,
+      Alapbetegségek: 'szenilitás, érelmeszesedés',
+    },
+    {
+      Sorszám: 259,
+      Nem: 'Férfi',
+      Kor: 80,
+      Alapbetegségek:
+        'magas vérnyomás, demencia, szívkoszorúér betegség, autoimmun betegség',
+    },
+    {
+      Sorszám: 258,
+      Nem: 'Nő',
+      Kor: 85,
+      Alapbetegségek: 'magas vérnyomás, leépülés, iszkémiás szívbetegség',
+    },
+    {
+      Sorszám: 257,
+      Nem: 'Nő',
+      Kor: 91,
+      Alapbetegségek: 'szívkoszorúér betegség, pitvar fribrilláció',
+    },
+    {
+      Sorszám: 256,
+      Nem: 'Férfi',
+      Kor: 41,
+      Alapbetegségek: 'súlyos bakteriális fertőzés, vérmérgezés, bélgyulladás',
+    },
+    {
+      Sorszám: 255,
+      Nem: 'Férfi',
+      Kor: 86,
+      Alapbetegségek: 'magas vérnyomás, epilepszia, szívbetegség',
+    },
+    {
+      Sorszám: 254,
+      Nem: 'Nő',
+      Kor: 91,
+      Alapbetegségek: 'méhnyakrák többszörös áttéttel',
+    },
+    {
+      Sorszám: 253,
+      Nem: 'Férfi',
+      Kor: 80,
+      Alapbetegségek: 'koponyaűri vérzés',
+    },
+    {
+      Sorszám: 252,
+      Nem: 'Férfi',
+      Kor: 81,
+      Alapbetegségek: 'heveny veseelégtelenség, szívbetegség, vérszegénység',
+    },
+    {
+      Sorszám: 251,
+      Nem: 'Nő',
+      Kor: 91,
+      Alapbetegségek:
+        'magas vérnyomás, általános érelmeszesedés, szívelégtelenség',
+    },
+    {
       Sorszám: 250,
       Nem: 'Nő',
       Kor: 91,

@@ -94,8 +94,8 @@ class DeathsByPercentOfPopulation {
             },
             footer: function () {
               return (
-                'Összesen: ' +
-                window.total
+                'Átlag: ' +
+                (window.total / 2)
                   // .toString()
                   // .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
                   .toFixed(2) +
