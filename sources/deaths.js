@@ -33,6 +33,213 @@ class Deaths {
 
   static data = [
     {
+      Sorszám: 312,
+      Nem: 'Férfi',
+      Kor: 72,
+      Alapbetegségek:
+        'magas vérnyomás, 2-es típusú cukorbetegség, végbéldaganat csontáttéttel',
+    },
+    {
+      Sorszám: 311,
+      Nem: 'Férfi',
+      Kor: 72,
+      Alapbetegségek: 'Alzheimer-kór, idült iszkémiás szívbetegség',
+    },
+    {
+      Sorszám: 310,
+      Nem: 'Nő',
+      Kor: 86,
+      Alapbetegségek:
+        'magas vérnyomás, időskori demencia, pitvarfibrilláció, 2-es típusú cukorbetegség, idült iszkémiás szívbetegség',
+    },
+    {
+      Sorszám: 309,
+      Nem: 'Nő',
+      Kor: 87,
+      Alapbetegségek:
+        'méhnyálkahártya rosszindulatú daganata, magas vérnyomás, pangásos szívelégtelenség',
+    },
+    {
+      Sorszám: 308,
+      Nem: 'Férfi',
+      Kor: 76,
+      Alapbetegségek:
+        'agyi érelmeszesedés, magas vérnyomás betegség, 2-es típusú cukorbetegség, Parkinson-kór',
+    },
+    {
+      Sorszám: 307,
+      Nem: 'Férfi',
+      Kor: 84,
+      Alapbetegségek:
+        'cukorbetegség, magas vérnyomás, szív és keringési betegség, demencia, veseelégtelenség, vérszegénység, érelmeszesedés, agyi leépülés',
+    },
+    {
+      Sorszám: 306,
+      Nem: 'Nő',
+      Kor: 78,
+      Alapbetegségek: 'krónikus pajzsmirigygyulladás, érelmeszesedés',
+    },
+    {
+      Sorszám: 305,
+      Nem: 'Nő',
+      Kor: 77,
+      Alapbetegségek:
+        'magas vérnyomás, cukorbetegség, szív és érrendszeri betegség',
+    },
+    {
+      Sorszám: 304,
+      Nem: 'Férfi',
+      Kor: 79,
+      Alapbetegségek:
+        'iszkémiás szívbetegség, pitvarfibrilláció, krónikus pajzsmirigygyulladás',
+    },
+    {
+      Sorszám: 303,
+      Nem: 'Férfi',
+      Kor: 90,
+      Alapbetegségek: 'demencia',
+    },
+    {
+      Sorszám: 302,
+      Nem: 'Férfi',
+      Kor: 84,
+      Alapbetegségek: 'magas vérnyomás, demencia',
+    },
+    {
+      Sorszám: 301,
+      Nem: 'Férfi',
+      Kor: 76,
+      Alapbetegségek:
+        'idült légzőszervi megbetegedés, magas vérnyomás, közepes fokú aorta szűkület',
+    },
+    {
+      Sorszám: 300,
+      Nem: 'Férfi',
+      Kor: 64,
+      Alapbetegségek: 'végstádiumú veseelégtelenség',
+    },
+    {
+      Sorszám: 299,
+      Nem: 'Nő',
+      Kor: 87,
+      Alapbetegségek: 'combnyaktörés, pitvarfibrilláció',
+    },
+    {
+      Sorszám: 298,
+      Nem: 'Nő',
+      Kor: 80,
+      Alapbetegségek:
+        'cukorbetegség, magas vérnyomás, krónikus veseelégtelenség',
+    },
+    {
+      Sorszám: 297,
+      Nem: 'Nő',
+      Kor: 44,
+      Alapbetegségek: 'magas vérnyomás, asztma, hepatitis C',
+    },
+    {
+      Sorszám: 296,
+      Nem: 'Nő',
+      Kor: 78,
+      Alapbetegségek: 'általános érelmeszesedés, magas vérnyomás',
+    },
+    {
+      Sorszám: 295,
+      Nem: 'Nő',
+      Kor: 84,
+      Alapbetegségek: 'általános érelmeszesedés, magas vérnyomás',
+    },
+    {
+      Sorszám: 294,
+      Nem: 'Férfi',
+      Kor: 64,
+      Alapbetegségek: 'idült légzőszervi megbetegedés, gyomorfekély',
+    },
+    {
+      Sorszám: 293,
+      Nem: 'Férfi',
+      Kor: 66,
+      Alapbetegségek:
+        'magas vérnyomás, krónikus veseelégtelenség, vérszegénység',
+    },
+    {
+      Sorszám: 292,
+      Nem: 'Nő',
+      Kor: 76,
+      Alapbetegségek: '2-es típusú cukorbetegség, magas vérnyomás',
+    },
+    {
+      Sorszám: 291,
+      Nem: 'Nő',
+      Kor: 84,
+      Alapbetegségek: 'magas vérnyomás, demencia, sokidegbántalom',
+    },
+    {
+      Sorszám: 290,
+      Nem: 'Férfi',
+      Kor: 56,
+      Alapbetegségek:
+        'extrém elhízás, magas vérnyomás, beszűkült vesefunkciók, jobbszívfél-elégtelenség',
+    },
+    {
+      Sorszám: 289,
+      Nem: 'Férfi',
+      Kor: 74,
+      Alapbetegségek:
+        'magas vérnyomás, agyvérzés, alkoholizmus, pitvarfibrilláció',
+    },
+    {
+      Sorszám: 288,
+      Nem: 'Nő',
+      Kor: 96,
+      Alapbetegségek:
+        'magas vérnyomás, idült hasnyálmirigy gyulladás, asztma, pitvarfibrilláció, gyomorfekély',
+    },
+    {
+      Sorszám: 287,
+      Nem: 'Nő',
+      Kor: 94,
+      Alapbetegségek: 'krónikus veseelégtelenség, magas vérnyomás',
+    },
+    {
+      Sorszám: 286,
+      Nem: 'Férfi',
+      Kor: 83,
+      Alapbetegségek: 'tüdőtágulás',
+    },
+    {
+      Sorszám: 285,
+      Nem: 'Férfi',
+      Kor: 59,
+      Alapbetegségek:
+        'májelégtelenség, szívmegállás, cukorbetegség, magas vérnyomás',
+    },
+    {
+      Sorszám: 284,
+      Nem: 'Férfi',
+      Kor: 76,
+      Alapbetegségek: 'mellkasi gennygyülem',
+    },
+    {
+      Sorszám: 283,
+      Nem: 'Nő',
+      Kor: 63,
+      Alapbetegségek: 'krónikus veseelégtelenség, szívelégtelenség',
+    },
+    {
+      Sorszám: 282,
+      Nem: 'Nő',
+      Kor: 83,
+      Alapbetegségek: 'leukémia, általános érelmeszesedés, magas vérnyomás',
+    },
+    {
+      Sorszám: 281,
+      Nem: 'Férfi',
+      Kor: 87,
+      Alapbetegségek:
+        'gyomorhiány, agyi infarktus, cukorbetegség, demencia, magas vérnyomás, ISZB',
+    },
+    {
       Sorszám: 280,
       Nem: 'Férfi',
       Kor: 79,

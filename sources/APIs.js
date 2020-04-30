@@ -1,6 +1,7 @@
 class APIs {
   // https://rapidapi.com/Gramzivi/api/covid-19-data?endpoint=apiendpoint_a0a3b806-6a57-4726-8fe7-6883b6dbaa9e
-  get = async (
+  get =
+   (
     date,
     code = 'hun',
     format = 'json',

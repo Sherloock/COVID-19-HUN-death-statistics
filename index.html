@@ -105,7 +105,7 @@
     </div>
 
     <script>
-      stuff();
+      //stuff();
 
       async function stuff() {
         var result = await new APIs().get('2020-04-10');
@@ -114,7 +114,7 @@
       }
 
       Deaths.dataCheck();
-      new DeathsByAge('deathsByAgeChart').getChart(60);
+      new DeathsByAge('deathsByAgeChart').getChart(10);
       new DeathsByGender('deathsByGenderChart').getChart();
       new DeathsByGenderAndAge('deathsByGenderAndAgeChart').getChart(10);
       new PopulationChart('populationChart').getChart();
