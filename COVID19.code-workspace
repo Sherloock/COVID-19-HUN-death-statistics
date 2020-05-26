@@ -1,0 +1,36 @@
+{
+
+	"settings": {
+		"git.ignoreLimitWarning": true,
+		"explorer.compactFolders": false,
+		"files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "node_modules": true,
+         "**/dist": true,
+        "**/vendor": true,
+        "**/package-lock*":true
+      },
+      "search.exclude": {
+        "**/htdocs": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/vendor": true,
+        "**/package-lock*":true
+      },
+	},
+	"folders": [
+	 	{
+			"path": ".", "name": "root"
+		},
+
+	]
+}
